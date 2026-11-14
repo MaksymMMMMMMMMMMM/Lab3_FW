@@ -1,0 +1,73 @@
+:root {
+  color-scheme: dark;
+  --background: #141719;
+  --panel: #1c2124;
+  --text: #f3f6f2;
+  --muted: #aeb8bd;
+  --line: #394347;
+  --accent: #c6fa53;
+  --danger: #ffa7a3;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.55;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { width: min(1120px, calc(100% - 2.5rem)); margin-inline: auto; }
+.top-bar { border-bottom: 1px solid var(--line); background: var(--panel); }
+.nav, .heading, .card-footer, .filters, .actions, .pagination {
+  display: flex; align-items: center; gap: .8rem; flex-wrap: wrap;
+}
+.nav, .heading, .card-footer { justify-content: space-between; }
+.nav { min-height: 4.5rem; padding-block: .75rem; }
+.nav nav { display: flex; gap: 1.4rem; }
+a { color: inherit; text-decoration: none; }
+.brand { font-weight: 850; letter-spacing: .08em; }
+.brand span, .kicker, .current, .back { color: var(--accent); }
+.kicker { font-size: .82rem; font-weight: 750; letter-spacing: .08em; margin: 0 0 .5rem; }
+.page, .hero { padding-block: clamp(2rem, 6vw, 5rem); min-height: 65vh; }
+.narrow { max-width: 720px; margin-inline: auto; }
+h1, h2 { line-height: 1.1; margin: .4rem 0 1rem; overflow-wrap: anywhere; }
+h1 { font-size: clamp(2.1rem, 6vw, 4.2rem); letter-spacing: -.045em; }
+h2 { font-size: 1.3rem; }
+.hero { display: grid; grid-template-columns: 1.5fr 1fr; align-items: center; gap: clamp(1.5rem, 6vw, 5rem); }
+.intro { font-size: 1.1rem; color: var(--muted); max-width: 34rem; margin: 1.2rem 0 1.6rem; }
+.hero-panel, .card { padding: clamp(1rem, 3vw, 1.75rem); border: 1px solid var(--line); background: var(--panel); border-radius: 1rem; }
+.hero-panel div { display: grid; gap: .15rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.hero-panel strong { color: var(--accent); font-size: 1.4rem; }
+.hero-panel span, .hero-panel p, .muted, dt { color: var(--muted); }
+.hero-panel p { margin-bottom: 0; }
+.button, input, textarea, select { font: inherit; }
+.button {
+  display: inline-flex; align-items: center; gap: .5rem; color: var(--text); background: #22292d;
+  border: 1px solid var(--line); border-radius: .5rem; padding: .55rem .9rem; font-weight: 650; cursor: pointer;
+}
+.button:hover:not(:disabled) { border-color: var(--accent); }
+.button.primary { color: #192009; background: var(--accent); border-color: var(--accent); }
+.button.danger { color: var(--danger); }
+.button:disabled { opacity: .5; cursor: default; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.filters { margin: 1rem 0 1.5rem; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.tag { display: inline-block; color: var(--accent); border: 1px solid var(--line); border-radius: .3rem; padding: .2rem .55rem; margin-bottom: .6rem; font-size: .8rem; font-weight: 700; }
+.balance { font-size: 2rem; letter-spacing: -.05em; font-weight: 800; }
+.metrics { margin: 1rem 0; }
+.metrics div { display: flex; justify-content: space-between; gap: .65rem; border-top: 1px solid var(--line); padding: .55rem 0; }
+.metrics dd { margin: 0; text-align: end; font-weight: 680; }
+.card-footer strong { font-size: 1.25rem; color: var(--accent); }
+.pagination { justify-content: center; margin-top: 1.4rem; }
+.back { display: inline-block; margin-bottom: 1rem; }
+.detail h1, .narrow > h1 { font-size: clamp(1.8rem, 5vw, 3.2rem); }
+.error { color: var(--danger); border-left: 3px solid currentColor; padding: .45rem .75rem; }
+.error p { margin: .2rem 0; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.form-grid label { display: grid; gap: .3rem; }
+.form-grid .wide { grid-column: 1 / -1; }
+input, select, textarea { width: 100%; background: var(--background); border: 1px solid var(--line); color: var(--text); border-radius: .4rem; padding: .5rem .65rem; }
+.filters select { width: auto; }
+textarea { resize: vertical; }
+.actions { margin-top: 1.25rem; }
+.footer { padding: 1.4rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+@media (max-width: 850px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 570px) { .grid, .hero, .form-grid { grid-template-columns: 1fr; } }
